@@ -6,14 +6,11 @@
                 <variable
                     name="item"
                       type="com.aavidsoft.freshersbuddy.articles.allarticles.models.ItemsDetail"  />
-
-
         </data>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
                 <ImageView
                     android:id="@+id/articleImage"

@@ -1,44 +1,62 @@
 package com.aavidsoft.freshersbuddy.articles.allarticles.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.Items
-import com.aavidsoft.freshersbuddy.articles.allarticles.models.ItemsDetail
 import com.aavidsoft.freshersbuddy.articles.allarticles.repositories.ArticleRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+class ArticleViewModel(
+    private val articleRepository: ArticleRepository
+) : ViewModel() {
 
-class ArticleViewModel(private val articleRepository: ArticleRepository) : ViewModel() {
     val articleUpdateAvailableLiveData = MutableLiveData<Boolean>()
-    val articleDetailUpdateAvailableLiveData = MutableLiveData<Boolean>()
     val items = ArrayList<Items>()
-    val itemsDetail = ArrayList<ItemsDetail>()
 
-    fun fetchArticles(page: Int, size: Int) {
+    var pageNo: Int = 0
+    var pageSize: Int = 5
+    var hasMoreData = true
+    var isFetchingArticle = false
+    fun fetchArticles() {
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val items = articleRepository.fetchItems(page, size)
-            withContext(Dispatchers.Main) {
-                if (items != null) {
-                    this@ArticleViewModel.items.addAll(items)
-                }
-                articleUpdateAvailableLiveData.postValue(true)
-            }
+        if (!hasMoreData) {
+            articleUpdateAvailableLiveData.postValue(false)
+            return;
         }
-    }
+        if (isFetchingArticle) {
+            return
+        }
+        isFetchingArticle = true
 
-    fun fetchArticleDetails(id: Int) {
         CoroutineScope(Dispatchers.IO).launch {
-            val itemsDetail = articleRepository.fetchItemDetails(id)
-            withContext(Dispatchers.Main) {
-                if (itemsDetail != null) {
-                    this@ArticleViewModel.itemsDetail.addAll(itemsDetail)
+            try {
 
-                    articleDetailUpdateAvailableLiveData.postValue(true)
+                Log.e("vishal", "page: ${pageNo + 1}")
+
+                val items = articleRepository.fetchItems(
+                    ++pageNo,
+                    pageSize
+                )
+                if (items != null) {
+                    withContext(Dispatchers.Main) {
+                        this@ArticleViewModel.items.addAll(items)
+                        articleUpdateAvailableLiveData.postValue(true)
+                        if (items.size < pageSize) {
+                            hasMoreData = false
+                        }
+                    }
+                } else {
+                    articleUpdateAvailableLiveData.postValue(false)
                 }
+            } catch (e: Exception) {
+                articleUpdateAvailableLiveData.postValue(false)
+
+            } finally {
+                isFetchingArticle = false
             }
         }
     }

@@ -2,7 +2,7 @@ package com.aavidsoft.freshersbuddy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.aavidsoft.freshersbuddy.articles.fragments.ArticlesFragment
+import com.aavidsoft.freshersbuddy.articles.allarticles.fragments.ArticlesFragment
 import com.aavidsoft.freshersbuddy.databinding.ActivityMainBinding
 
 

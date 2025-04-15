@@ -9,29 +9,36 @@ import com.aavidsoft.freshersbuddy.R
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.Items
 import com.aavidsoft.freshersbuddy.databinding.ItemArticlesBinding
 
-class ArticleAdapter(private var items: ArrayList<Items>) :
-    RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+class ArticlesAdapter(private var items: ArrayList<Items>) :
+    RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
 
-    interface OnItemClickListener {
-        fun onItemClick(items: Items,position: Int,articleAdapter: ArticleAdapter)
+    interface OnItemsClickListener {
+        fun onItemsClick(
+            items: Items,
+            position: Int,
+            articlesAdapter: ArticlesAdapter
+        )
     }
 
-    var onItemClickListener: OnItemClickListener ?= null
+    var onItemsClickListener: OnItemsClickListener? = null
 
     inner class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val articleViewHolderBinding = ItemArticlesBinding.bind(view)
 
         init {
             articleViewHolderBinding.root.setOnClickListener {
-                onItemClickListener?.onItemClick(items[adapterPosition],adapterPosition,this@ArticleAdapter)
+                onItemsClickListener?.onItemsClick(
+                    items[adapterPosition],
+                    adapterPosition,
+                    this@ArticlesAdapter
+                )
             }
         }
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.item_articles, parent,false)
+        val view = layoutInflater.inflate(R.layout.item_articles, parent, false)
         return ArticleViewHolder(view)
     }
 
@@ -39,7 +46,5 @@ class ArticleAdapter(private var items: ArrayList<Items>) :
         holder.articleViewHolderBinding.itemObject = items[position]
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
 }

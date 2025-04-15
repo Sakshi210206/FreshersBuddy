@@ -1,4 +1,4 @@
-package com.aavidsoft.freshersbuddy.articles.bindingadapters
+package com.aavidsoft.freshersbuddy.articles.utils.bindingadapters
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
