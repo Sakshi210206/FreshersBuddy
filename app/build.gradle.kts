@@ -47,8 +47,8 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
 
+    implementation(libs.glide)
 
-    
     //retrofit and glide
     implementation(libs.glide)
     implementation(libs.converter.gson)

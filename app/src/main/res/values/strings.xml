@@ -2,4 +2,29 @@
     <string name="app_name">FreshersBuddy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--message-->
+
+
+    <!--Hints-->
+    <string name="hint_date_and_time">date_and_time</string>
+    <string name="hint_source">source</string>
+    <string name="hint_description_body">description/body</string>
+    <string name="hint_title">title</string>
+
+    <!--Menu-->
+    <string name="menu_home">home</string>
+    <string name="menu_more">more</string>
+    <string name="menu_profile">profile</string>
+    <string name="menu_profile_section">Profile_Section</string>
+    <string name="menu_welcome_to_home_menu">Welcome to home_menu</string>
+    <string name="menu_more_options">More Options</string>
+
+    <!--Bottom Navigation-->
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_more">More</string>
+    <string name="bottom_navigation_profile">Profile</string>
+
+    <!--Buttons-->
+
 </resources>

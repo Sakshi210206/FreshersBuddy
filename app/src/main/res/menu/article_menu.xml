@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/more"
+        android:title="@string/menu_more"
+        android:icon="@drawable/ic_more"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/profile"
+        android:title="@string/menu_profile"
+        android:icon="@drawable/ic_round_account_button_with_user_inside"
+        app:showAsAction="never"/>
+</menu>

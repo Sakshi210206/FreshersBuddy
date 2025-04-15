@@ -5,11 +5,21 @@
          <item name="colorPrimary">@color/purple</item>
         <item name="colorPrimaryVariant">@color/purple</item>
         <item name="android:statusBarColor">@color/purple</item>
+        <item name ="actionOverflowButtonStyle">@style/threeDotsStyle</item>
+
+
 
 
 
     </style>
 
     <style name="Theme.FreshersBuddy" parent="Base.Theme.FreshersBuddy" />
+    <style name ="threeDotsStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name ="tint">@color/white</item>
+    </style>
+
+
+
+
 
 </resources>
