@@ -139,7 +139,7 @@ class ArticlesFragment : Fragment() {
         articleDetailsFragment.arguments = bundle
 
         parentFragmentManager.beginTransaction()
-            .add(R.id.main, articleDetailsFragment)
+            .replace(R.id.main, articleDetailsFragment)
             .addToBackStack(null)
             .commit()
     }
