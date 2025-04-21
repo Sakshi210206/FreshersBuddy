@@ -2,6 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FreshersBuddy" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-
+        <item name="popupMenuStyle">@style/MyPopupMenuDark</item>
+        <item name="actionOverflowButtonStyle">@style/threeDotsStyle</item>
     </style>
+        <style name="Theme.FreshersBuddy" parent="Base.Theme.FreshersBuddy" />
+
+        <!-- Overflow (three dots) icon tint -->
+        <style name="threeDotsStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+            <item name="tint">@color/white</item>
+        </style>
+
+        <!-- Popup menu text style for dark theme -->
+        <style name="MyPopupMenuDark" parent="Widget.AppCompat.PopupMenu.Overflow">
+            <item name="android:textColor">@color/menu_item_text_color</item>
+        </style>
+
 </resources>

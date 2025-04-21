@@ -6,4 +6,9 @@
         <item name="android:layout_marginTop">20dp</item>
     </style>
 
+    <style name="PopupMenuTextStyle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/black</item> <!-- or white in night -->
+    </style>
+
+
 </resources>

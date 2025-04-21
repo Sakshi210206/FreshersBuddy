@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/purple</item>
         <item name="android:statusBarColor">@color/purple</item>
         <item name ="actionOverflowButtonStyle">@style/threeDotsStyle</item>
-
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
 
 
 
@@ -17,9 +17,14 @@
     <style name ="threeDotsStyle" parent="Widget.AppCompat.ActionButton.Overflow">
         <item name ="tint">@color/white</item>
     </style>
+    <style name="MyPopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:textColor">@color/menu_item_text_color</item> <!-- For light theme -->
+    </style>
 
 
 
 
 
 </resources>
+
+
