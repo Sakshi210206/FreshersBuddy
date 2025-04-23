@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aavidsoft.freshersbuddy.articles.allarticles.fragments.ArticlesFragment
 import com.aavidsoft.freshersbuddy.databinding.ActivityMainBinding
-import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.fragments.InterviewQuestionFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(activityMainBinding.root)
         supportFragmentManager.beginTransaction()
             .replace(R.id.main, ArticlesFragment())
-           // .replace(R.id.main, InterviewQuestionFragment())
             .commit()
 
     }

@@ -2,8 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FreshersBuddy" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="popupMenuStyle">@style/MyPopupMenuDark</item>
         <item name="actionOverflowButtonStyle">@style/threeDotsStyle</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:itemTextAppearance">@style/MyPopupMenu</item>
+
     </style>
         <style name="Theme.FreshersBuddy" parent="Base.Theme.FreshersBuddy" />
 

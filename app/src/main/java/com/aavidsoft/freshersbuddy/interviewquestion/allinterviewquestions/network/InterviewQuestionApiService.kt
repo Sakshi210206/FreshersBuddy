@@ -10,8 +10,6 @@ import retrofit2.http.Path
 
 interface InterviewQuestionApiService {
 
-    @GET("interviewquestions")
-    suspend fun fetchInterviewQuestions(): ApiResponse.Success<ArrayList<InterviewQuestion>>
 
     companion object {
         private var interviewQuestionApiService: InterviewQuestionApiService? = null

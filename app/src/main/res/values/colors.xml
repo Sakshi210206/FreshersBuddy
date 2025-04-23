@@ -4,9 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="off_white">#D3CEC8C8</color>
     <color name="purple">#593c8f</color>
-    <color name="yellow">#ffc000</color>
+    <color name="yellow">#FFA726</color>
     <color name="light_blue">#00BCD4</color>
-    <color name="blue">#2196F3</color>
+    <color name="light_green">#66BB6A</color>
+    <color name="colour_blue">#42A5F5	</color>
 
     <color name="primary_color">#FF000000</color>
     <color name="menu_item_text_color">#FF000000</color>
