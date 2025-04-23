@@ -9,9 +9,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/menu_more_options"
-        android:textSize="24dp"
         android:gravity="center"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:text="@string/menu_more_options"
+        android:textSize="24dp" />
 
 </LinearLayout>

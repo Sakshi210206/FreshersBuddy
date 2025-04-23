@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aavidsoft.freshersbuddy.R
 import com.aavidsoft.freshersbuddy.articles.allarticles.adapters.ArticlesAdapter
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.Items
-import com.aavidsoft.freshersbuddy.articles.utils.factory.ArticleViewModelFactory
+import com.aavidsoft.freshersbuddy.utils.factory.ViewModelFactory
 import com.aavidsoft.freshersbuddy.articles.allarticles.network.ArticlesApiService
 import com.aavidsoft.freshersbuddy.articles.allarticles.repositories.ArticleRepository
 import com.aavidsoft.freshersbuddy.articles.allarticles.viewmodels.ArticleViewModel
@@ -51,10 +51,12 @@ class ArticlesFragment : Fragment() {
         articlesBinding.recyclerSearch.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
+        val toolbar = articlesBinding.articleToolbar.toolbar
+        toolbar.title = "Articles"
         val menuInflater = MenuInflater(context)
-        menuInflater.inflate(R.menu.article_menu, articlesBinding.toolbar.menu)
+        menuInflater.inflate(R.menu.menu_common, toolbar.menu)
 
-        articlesBinding.toolbar.setOnMenuItemClickListener { item ->
+        toolbar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.home -> {
                     replaceFragment(HomeFragment())
@@ -147,7 +149,7 @@ class ArticlesFragment : Fragment() {
     private fun initViewModel() {
         articleViewModel = ViewModelProvider(
             this,
-            ArticleViewModelFactory(
+            ViewModelFactory(
                 ArticleRepository(
                     ArticlesApiService.getInstance()
                 )
@@ -160,7 +162,7 @@ class ArticlesFragment : Fragment() {
         articleViewModel.articleUpdateAvailableLiveData.observe(viewLifecycleOwner) {
             if (it) {
                 articlesAdapter.notifyDataSetChanged()
-                Log.e("vishal", "data set updated: len ${articleViewModel.items.size}")
+                Log.e("Vishal", "data set updated: len ${articleViewModel.items.size}")
             }
         }
     }

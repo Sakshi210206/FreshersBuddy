@@ -4,8 +4,8 @@ import com.aavidsoft.freshersbuddy.articles.allarticles.models.ArticleDetailResp
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.ArticleResponse
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.Items
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.ItemsDetail
-import com.aavidsoft.freshersbuddy.articles.utils.apiresponse.ApiResponse
-import com.aavidsoft.freshersbuddy.articles.utils.apiservice.Constants
+import com.aavidsoft.freshersbuddy.utils.apiresponse.ApiResponse
+import com.aavidsoft.freshersbuddy.utils.apiservice.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET

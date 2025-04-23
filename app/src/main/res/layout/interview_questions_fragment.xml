@@ -5,14 +5,14 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/articleToolbar"
+        android:id="@+id/interviewQuestionToolbar"
         layout="@layout/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerSearch"
+        android:id="@+id/recyclerSearchInterviewQue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/articleToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/interviewQuestionToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

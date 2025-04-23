@@ -15,11 +15,10 @@ class ArticleDetailsViewModel(
     private val articleDetailsRepository: ArticleDetailsRepository
 ) : ViewModel() {
 
-//    val articleDetailUpdateAvailableLiveData = MutableLiveData<Boolean>(){
+    //    val articleDetailUpdateAvailableLiveData = MutableLiveData<Boolean>(){
 //        return
 //    }
     val articleDetailStatusMutableLiveData = MutableLiveData<ItemsDetail>()
-
 
     fun fetchArticleDetails(
         id: Int

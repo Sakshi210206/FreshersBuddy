@@ -25,7 +25,7 @@ class ArticleViewModel(
 
         if (!hasMoreData) {
             articleUpdateAvailableLiveData.postValue(false)
-            return;
+            return
         }
         if (isFetchingArticle) {
             return

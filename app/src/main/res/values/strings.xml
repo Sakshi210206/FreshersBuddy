@@ -11,6 +11,8 @@
     <string name="hint_source">source</string>
     <string name="hint_description_body">description/body</string>
     <string name="hint_title">title</string>
+    <string name="interviewQuestions">interviewQuestions</string>
+
 
     <!--Menu-->
     <string name="menu_home">home</string>

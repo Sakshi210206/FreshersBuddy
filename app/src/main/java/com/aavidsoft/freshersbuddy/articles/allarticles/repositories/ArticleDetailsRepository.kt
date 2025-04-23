@@ -2,7 +2,7 @@ package com.aavidsoft.freshersbuddy.articles.allarticles.repositories
 
 import com.aavidsoft.freshersbuddy.articles.allarticles.models.ItemsDetail
 import com.aavidsoft.freshersbuddy.articles.allarticles.network.ArticlesApiService
-import com.aavidsoft.freshersbuddy.articles.utils.repository.Repository
+import com.aavidsoft.freshersbuddy.utils.repository.Repository
 
 class ArticleDetailsRepository(
     private val articleApiService: ArticlesApiService

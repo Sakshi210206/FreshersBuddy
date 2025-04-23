@@ -1,4 +1,4 @@
-package com.aavidsoft.freshersbuddy.articles.utils.apiresponse
+package com.aavidsoft.freshersbuddy.utils.apiresponse
 
 import com.google.gson.annotations.SerializedName
 
