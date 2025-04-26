@@ -31,7 +31,7 @@ class InterviewQuestionViewModel(
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val interviewQues = interviewQuestionRepository.fetchInterviewQueList()
+                val interviewQues = interviewQuestionRepository.fetchInterviewQuestionList()
                 if (interviewQues != null) {
                     withContext(Dispatchers.Main) {
                         this@InterviewQuestionViewModel.interviewQuestion.addAll(interviewQues)

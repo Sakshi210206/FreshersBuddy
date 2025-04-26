@@ -52,7 +52,7 @@ class ArticleDetailsFragment : Fragment() {
         articleDetailsViewModel.articleDetailStatusMutableLiveData.observe(
             viewLifecycleOwner
         ) {
-            articleDetailsFragmentBinding.articledetailsitem = it
+           articleDetailsFragmentBinding.item = it
             itemsDetail = it
         }
     }

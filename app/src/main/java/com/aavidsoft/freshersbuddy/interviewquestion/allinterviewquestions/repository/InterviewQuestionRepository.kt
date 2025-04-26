@@ -8,7 +8,7 @@ class InterviewQuestionRepository(
     private val interviewQuestionApiService: InterviewQuestionApiService
 ) : Repository() {
 
-    suspend fun fetchInterviewQueList(): ArrayList<InterviewQuestion>? {
+    suspend fun fetchInterviewQuestionList(): ArrayList<InterviewQuestion>? {
         return interviewQuestionApiService.fetchInterviewQuestions().data
     }
 }

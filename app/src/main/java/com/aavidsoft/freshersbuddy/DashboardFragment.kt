@@ -43,6 +43,13 @@ class DashboardFragment : Fragment() {
         interviewCard.setOnClickListener {
             replaceFragment(InterviewQuestionFragment())
         }
+        tutorialsCard.setOnClickListener {
+            val bottomSheetDialog = com.google.android.material.bottomsheet.BottomSheetDialog(requireContext())
+            val bottomSheetView = layoutInflater.inflate(R.layout.tutorial_bottomsheet, null)
+            bottomSheetDialog.setContentView(bottomSheetView)
+            bottomSheetDialog.show()
+        }
+
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {

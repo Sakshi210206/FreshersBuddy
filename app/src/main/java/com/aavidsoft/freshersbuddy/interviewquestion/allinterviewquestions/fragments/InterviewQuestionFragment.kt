@@ -10,7 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.aavidsoft.freshersbuddy.R
+import com.aavidsoft.freshersbuddy.databinding.InterviewQuestionDetailsFragmentBinding
 import com.aavidsoft.freshersbuddy.databinding.InterviewQuestionsFragmentBinding
+import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.models.InterviewQuestion
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.network.InterviewQuestionApiService
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.repository.InterviewQuestionRepository
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.viewmodel.InterviewQuestionViewModel
@@ -82,6 +85,27 @@ class InterviewQuestionFragment : Fragment() {
             }
         }
         )
+
+        interviewQuestionAdapter.onItemClickListener = object : InterviewQuestionAdapter.OnItemClickListener{
+            override fun onItemClick(
+                interviewQuestion: InterviewQuestion,
+                position: Int,
+                interviewQuestionAdapter: InterviewQuestionAdapter
+            ) {
+                showInterviewQuestionDetails(interviewQuestion)
+            }
+        }
+    }
+    private fun showInterviewQuestionDetails(interviewQuestion: InterviewQuestion){
+        val interviewQuestionDetailsFragment = InterviewQuestionDetailsFragment()
+        var bundle = Bundle()
+        bundle.putSerializable("interviewQuestionId",interviewQuestion.interviewQuestionId)
+        interviewQuestionDetailsFragment.arguments = bundle
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.main,interviewQuestionDetailsFragment)
+            .addToBackStack(null)
+            .commit()
     }
     private fun initViewModel(){
           interviewQuestionViewModel = ViewModelProvider(
