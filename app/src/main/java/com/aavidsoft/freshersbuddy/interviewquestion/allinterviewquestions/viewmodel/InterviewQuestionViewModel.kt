@@ -16,7 +16,7 @@ class InterviewQuestionViewModel(
     val interviewQueUpdateAvailableLiveData = MutableLiveData<Boolean>()
     val interviewQuestion = ArrayList<InterviewQuestion>()
     var hasMoreData = true
-    var isFetchingInterviewQue = false
+    var isFetchingInterviewQuestion = false
 
     fun fetchInterviewQues() {
 
@@ -24,10 +24,10 @@ class InterviewQuestionViewModel(
             interviewQueUpdateAvailableLiveData.postValue(false)
             return
         }
-        if (isFetchingInterviewQue) {
+        if (isFetchingInterviewQuestion) {
             return
         }
-        isFetchingInterviewQue = true
+        isFetchingInterviewQuestion = true
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -45,7 +45,7 @@ class InterviewQuestionViewModel(
             } catch (e: Exception) {
                 interviewQueUpdateAvailableLiveData.postValue(false)
             } finally {
-                isFetchingInterviewQue = false
+                isFetchingInterviewQuestion = false
             }
         }
     }

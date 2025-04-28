@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aavidsoft.freshersbuddy.R
-import com.aavidsoft.freshersbuddy.databinding.InterviewQuestionDetailsFragmentBinding
 import com.aavidsoft.freshersbuddy.databinding.InterviewQuestionsFragmentBinding
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.models.InterviewQuestion
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.network.InterviewQuestionApiService
@@ -69,13 +68,13 @@ class InterviewQuestionFragment : Fragment() {
                 val lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
                 val totalItemCount = layoutManager.itemCount
                 if (isScrollingDown) {
-                    if (!interviewQuestionViewModel.isFetchingInterviewQue) {
+                    if (!interviewQuestionViewModel.isFetchingInterviewQuestion) {
                         if (interviewQuestionViewModel.hasMoreData) {
                             interviewQuestionViewModel.fetchInterviewQues()
                         }
                     }
                 } else if (isScrollingUp && lastVisibleItemPosition == totalItemCount - 1) {
-                    if (!interviewQuestionViewModel.isFetchingInterviewQue) {
+                    if (!interviewQuestionViewModel.isFetchingInterviewQuestion) {
                         if (interviewQuestionViewModel.hasMoreData) {
                             interviewQuestionViewModel.fetchInterviewQues()
 

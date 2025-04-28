@@ -28,14 +28,13 @@
     <string name="bottom_navigation_profile">Profile</string>
 
 
-
     <!--Dashboard fragment elements -->
-    <string name="popular_articles">Popular Articles</string>
     <string name="articles">Articles</string>
     <string name="interview_questions">Interview Questions</string>
     <string name="tutorials">Tutorials</string>
-    <string name="question">question</string>
-    <string name="answer">answer</string>
+    <string name="popular_articles">Popular Articles</string>
+
+
 
     <!--Buttons-->
 

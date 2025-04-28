@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
         supportFragmentManager.beginTransaction()
-            //.replace(R.id.main, ArticlesFragment())
-            .replace(R.id.main,InterviewQuestionFragment())
+            .replace(R.id.main,DashboardFragment())
             .commit()
 
     }

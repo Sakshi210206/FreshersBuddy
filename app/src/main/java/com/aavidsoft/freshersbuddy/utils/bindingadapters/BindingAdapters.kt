@@ -22,5 +22,12 @@ fun loadImage(view: ImageView, imageUrls: String?) {
         .error(com.aavidsoft.freshersbuddy.R.drawable.ic_img)
         .into(view)
 }
-
+@BindingAdapter("imageurl")
+fun loadImg(view: ImageView,imageUrl : String?){
+    Glide.with(view.context)
+        .load(imageUrl)
+        .placeholder(com.aavidsoft.freshersbuddy.R.drawable.ic_c)
+        .error(com.aavidsoft.freshersbuddy.R.drawable.ic_img)
+        .into(view)
+}
 

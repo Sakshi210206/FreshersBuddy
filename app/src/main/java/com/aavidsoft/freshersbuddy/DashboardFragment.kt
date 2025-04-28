@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.aavidsoft.freshersbuddy.articles.allarticles.adapters.ArticlesAdapter
 import com.aavidsoft.freshersbuddy.articles.allarticles.fragments.ArticlesFragment
 import com.aavidsoft.freshersbuddy.articles.more.fragment.MoreFragment
-import com.aavidsoft.freshersbuddy.articles.profile.fragment.ProfileFragment
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.fragments.InterviewQuestionFragment
+import com.aavidsoft.freshersbuddy.tutorials.fragments.TutorialsCategoryFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashboardFragment : Fragment() {
@@ -31,11 +28,6 @@ class DashboardFragment : Fragment() {
        val toolbar = view.findViewById<androidx.appcompat.widget.Toolbar>(R.id.dashboardToolbar)
         toolbar.title = "Fresher Buddy"
 
-//        val recyclerViewArticles = view.findViewById<RecyclerView>(R.id.recyclerSearch)
-//        recyclerViewArticles.layoutManager =
-//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-
         articlesCard.setOnClickListener {
             replaceFragment(ArticlesFragment())
         }
@@ -44,11 +36,10 @@ class DashboardFragment : Fragment() {
             replaceFragment(InterviewQuestionFragment())
         }
         tutorialsCard.setOnClickListener {
-            val bottomSheetDialog = com.google.android.material.bottomsheet.BottomSheetDialog(requireContext())
-            val bottomSheetView = layoutInflater.inflate(R.layout.tutorial_bottomsheet, null)
-            bottomSheetDialog.setContentView(bottomSheetView)
-            bottomSheetDialog.show()
+            val bottomSheet = TutorialsCategoryFragment()
+            bottomSheet.show(parentFragmentManager, bottomSheet.tag)
         }
+
 
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
@@ -62,7 +53,7 @@ class DashboardFragment : Fragment() {
                     true
                 }
                 R.id.profile -> {
-                    replaceFragment(ProfileFragment())
+                    replaceFragment(DashboardProfileFragment())
                     true
                 }
                 else -> false

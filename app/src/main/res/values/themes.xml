@@ -2,11 +2,12 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FreshersBuddy" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-         <item name="colorPrimary">@color/purple</item>
-        <item name="colorPrimaryVariant">@color/purple</item>
-        <item name="android:statusBarColor">@color/purple</item>
+         <item name="colorPrimary">@android:color/holo_purple</item>
+        <item name="colorPrimaryVariant">@android:color/holo_purple</item>
+        <item name="android:statusBarColor">@android:color/holo_purple</item>
         <item name ="actionOverflowButtonStyle">@style/threeDotsStyle</item>
         <item name="popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="font">@font/poppins_medium</item>
 
 
 
@@ -18,7 +19,7 @@
         <item name ="tint">@color/white</item>
     </style>
     <style name="MyPopupMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
-        <item name="android:textColor">@color/menu_item_text_color</item> <!-- For light theme -->
+        <item name="android:textColor">@color/menu_item_text_color</item>
     </style>
 
 

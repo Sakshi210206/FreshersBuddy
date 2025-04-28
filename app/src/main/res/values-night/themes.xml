@@ -5,6 +5,8 @@
         <item name="actionOverflowButtonStyle">@style/threeDotsStyle</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:itemTextAppearance">@style/MyPopupMenu</item>
+        <item name="font">@font/poppins_medium</item>
+        <item name="android:windowBackground">@color/white</item>
 
     </style>
         <style name="Theme.FreshersBuddy" parent="Base.Theme.FreshersBuddy" />
