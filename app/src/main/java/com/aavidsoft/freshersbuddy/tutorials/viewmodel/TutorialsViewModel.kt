@@ -17,7 +17,7 @@ class TutorialsViewModel (
     var hasMoreData = true
     var isFetchingTutorialCategory = false
 
-    fun fetchTutorialCategory(){
+    fun fetchTutorialCategory(id: Int){
         if (!hasMoreData){
             tutorialsUpdateAvailableLiveData.postValue(false)
             return
@@ -29,7 +29,7 @@ class TutorialsViewModel (
 
         CoroutineScope(Dispatchers.IO).launch {
             try{
-                val categoryTutorial = tutorialsRepository.fetchTutorialsList()
+                val categoryTutorial = tutorialsRepository.fetchTutorialsList(id)
                 if(categoryTutorial != null){
                     withContext(Dispatchers.Main){
                         this@TutorialsViewModel.tutorials.addAll(categoryTutorial)
@@ -46,6 +46,4 @@ class TutorialsViewModel (
             }
         }
     }
-
-
 }

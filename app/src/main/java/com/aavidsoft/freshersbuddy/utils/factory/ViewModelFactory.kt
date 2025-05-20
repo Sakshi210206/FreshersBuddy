@@ -11,8 +11,10 @@ import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.repos
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.viewmodel.InterviewQuestionDetailsViewModel
 import com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.viewmodel.InterviewQuestionViewModel
 import com.aavidsoft.freshersbuddy.tutorials.repository.TutorialsCategoryRepository
+import com.aavidsoft.freshersbuddy.tutorials.repository.TutorialsDetailsRepository
 import com.aavidsoft.freshersbuddy.tutorials.repository.TutorialsRepository
 import com.aavidsoft.freshersbuddy.tutorials.viewmodel.TutorialsCategoryViewModel
+import com.aavidsoft.freshersbuddy.tutorials.viewmodel.TutorialsDetailsViewModel
 import com.aavidsoft.freshersbuddy.tutorials.viewmodel.TutorialsViewModel
 import com.aavidsoft.freshersbuddy.utils.repository.Repository
 
@@ -39,10 +41,13 @@ class ViewModelFactory(
         if(modelClass.isAssignableFrom(TutorialsCategoryViewModel::class.java) && repository is TutorialsCategoryRepository){
             return TutorialsCategoryViewModel(repository) as T
         }
-        if(modelClass.isAssignableFrom(TutorialsViewModel::class.java) && repository is TutorialsRepository){
-            return  TutorialsViewModel(repository) as T
-        }
+       if(modelClass.isAssignableFrom(TutorialsViewModel:: class.java) && repository is TutorialsRepository){
+           return TutorialsViewModel(repository) as T
+       }
 
+        if(modelClass.isAssignableFrom(TutorialsDetailsViewModel :: class.java) && repository is TutorialsDetailsRepository){
+            return  TutorialsDetailsViewModel(repository) as T
+        }
         throw Exception("Unable to create vie model")
     }
 }

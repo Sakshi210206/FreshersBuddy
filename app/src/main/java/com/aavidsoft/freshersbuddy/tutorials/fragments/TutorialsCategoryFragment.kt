@@ -81,27 +81,43 @@ class TutorialsCategoryFragment  : BottomSheetDialogFragment(){
             }
         )
 
-//        tutorialsCategoryAdapter.onItemsClickListener = object : TutorialsCategoryAdapter.OnItemsClickListener{
-//            override fun onItemsClick(
-//                tutorialCategory: ItemCategory,
-//                position: Int,
-//                tutorialsCategoryAdapter: TutorialsCategoryAdapter
-//            ) {
-//                showTutorialCategory(tutorialCategory)
-//            }
-//        }
-//    }
-//    private fun showTutorialCategory(tutorialCategory: ItemCategory){
+
+        tutorialsCategoryAdapter.onItemsClickListener = object : TutorialsCategoryAdapter.OnItemsClickListener{
+            override fun onItemsClick(
+                tutorialCategory: ItemCategory,
+                position: Int,
+                tutorialsCategoryAdapter: TutorialsCategoryAdapter
+            ) {
+                showTutorialCategory(tutorialCategory)
+            }
+        }
+    }
+    private fun showTutorialCategory(tutorialCategory: ItemCategory) {
+        val tutorialsFragment = TutorialsFragment()
+
+        val bundle = Bundle().apply {
+            putInt("id", tutorialCategory.categoryId)
+        }
+        tutorialsFragment.arguments = bundle
+        dismiss()
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.main, tutorialsFragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+    //    private fun showTutorialCategory(tutorialCategory: ItemCategory){
 //        val tutorialsCategoryFragment = TutorialsCategoryFragment()
 //        var bundle = Bundle()
 //        bundle.putSerializable("tutorialCategory",tutorialCategory.categoryId)
 //        tutorialsCategoryFragment.arguments = bundle
+//        dismiss()
 //
 //        parentFragmentManager.beginTransaction()
-//            .replace(R.id.main,)
+//            .replace(R.id.main,TutorialsFragment())
 //            .addToBackStack(null)
 //            .commit()
-    }
+//    }
     private fun initViewModel(){
         tutorialsCategoryViewModel = ViewModelProvider(
             this,

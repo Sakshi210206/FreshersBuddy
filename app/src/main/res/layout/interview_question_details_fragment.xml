@@ -8,21 +8,20 @@
             type="com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.models.InterviewQuestionItemDetails" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/my_custom_style"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="25dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/my_styles"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_margin="8dp"/>
+
+
+       <!-- <TextView
             android:id="@+id/InterviewQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,9 +43,8 @@
             android:textSize="20sp"
             android:textColor="@color/primary_color"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/InterviewQuestion" />
+            app:layout_constraintTop_toBottomOf="@+id/InterviewQuestion" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
 </layout>

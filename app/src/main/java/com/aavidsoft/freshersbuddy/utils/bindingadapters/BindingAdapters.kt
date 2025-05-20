@@ -26,7 +26,7 @@ fun loadImage(view: ImageView, imageUrls: String?) {
 fun loadImg(view: ImageView,imageUrl : String?){
     Glide.with(view.context)
         .load(imageUrl)
-        .placeholder(com.aavidsoft.freshersbuddy.R.drawable.ic_c)
+        .placeholder(com.aavidsoft.freshersbuddy.R.drawable.ic_img)
         .error(com.aavidsoft.freshersbuddy.R.drawable.ic_img)
         .into(view)
 }

@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name: Sakshi Innani"
+            android:text="Name:"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address: Bavdhan,pune"
+            android:text="Address: "
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="College Details: GHRCE"
+            android:text="College Details: "
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact Number: 9373418948"
+            android:text="Contact Number:"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="8dp"
@@ -93,7 +93,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email: sakshiinnani@gmail.com"
+            android:text="Email: "
             android:textSize="16sp"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"

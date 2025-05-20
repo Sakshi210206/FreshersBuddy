@@ -1,6 +1,7 @@
 package com.aavidsoft.freshersbuddy.interviewquestion.allinterviewquestions.fragments
 
 import android.os.Bundle
+import android.text.Html.escapeHtml
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,14 +44,50 @@ class InterviewQuestionDetailsFragment : Fragment() {
             )
         )[InterviewQuestionDetailsViewModel::class.java]
     }
-    private fun initObserver(){
+    private fun initObserver() {
         interviewQuestionDetailsViewModel.interviewQuestionDetailStatusMutableLiveData.observe(
             viewLifecycleOwner
-        ){
-            interviewQuestionDetailsFragmentBinding.interviewQuestionDetailItems = it
-            interviewQuestionItemDetails = it
+        ) { item ->
+            interviewQuestionDetailsFragmentBinding.interviewQuestionDetailItems = item
+            interviewQuestionItemDetails = item
+
+            val question = item.question ?: "No Question Available"
+            val answer = item.answer ?: "No Answer Available"
+
+            val htmlContent = """
+            <html>
+                <head>
+                    <style>
+                        body { font-family: sans-serif; padding: 16px; color: #000000; }
+                        h1 { font-size: 45px; color: #0F172A; }
+                        p { font-size: 30px; line-height: 1.6; color: #1E293B; }
+                    </style>
+                </head>
+                <body>
+                    <h1>${escapeHtml(question)}</h1>
+                    <p>${escapeHtml(answer)}</p>
+                </body>
+            </html>
+        """.trimIndent()
+
+            interviewQuestionDetailsFragmentBinding.webView.apply {
+                settings.javaScriptEnabled = true
+                settings.loadWithOverviewMode = true
+                settings.useWideViewPort = true
+                settings.mixedContentMode = android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+                loadDataWithBaseURL(null, htmlContent, "text/html", "UTF-8", null)
+            }
         }
     }
+
+//    private fun initObserver(){
+//        interviewQuestionDetailsViewModel.interviewQuestionDetailStatusMutableLiveData.observe(
+//            viewLifecycleOwner
+//        ){
+//            interviewQuestionDetailsFragmentBinding.interviewQuestionDetailItems = it
+//            interviewQuestionItemDetails = it
+//        }
+//    }
 
 
 }

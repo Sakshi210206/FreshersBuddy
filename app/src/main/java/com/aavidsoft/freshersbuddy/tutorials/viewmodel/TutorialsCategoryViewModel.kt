@@ -11,41 +11,39 @@ import kotlinx.coroutines.withContext
 
 class TutorialsCategoryViewModel(
     private val tutorialsCategoryRepository: TutorialsCategoryRepository
-):ViewModel(){
+):ViewModel() {
     val tutorialCategoryUpdateAvailableLiveData = MutableLiveData<Boolean>()
     val tutorialCategory = ArrayList<ItemCategory>()
     var hasMoreData = true
     var isFetchingTutorialCategory = false
 
-    fun fetchTutorialCategory(){
-        if (!hasMoreData){
+    fun fetchTutorialCategory() {
+        if (!hasMoreData) {
             tutorialCategoryUpdateAvailableLiveData.postValue(false)
             return
         }
-        if(isFetchingTutorialCategory){
+        if (isFetchingTutorialCategory) {
             return
         }
         isFetchingTutorialCategory = true
 
         CoroutineScope(Dispatchers.IO).launch {
-            try{
+            try {
                 val categoryTutorial = tutorialsCategoryRepository.fetchTutorialCategoryList()
-                if(categoryTutorial != null){
-                    withContext(Dispatchers.Main){
+                if (categoryTutorial != null) {
+                    withContext(Dispatchers.Main) {
                         this@TutorialsCategoryViewModel.tutorialCategory.addAll(categoryTutorial)
                         tutorialCategoryUpdateAvailableLiveData.postValue(true)
                         hasMoreData = false
                     }
-                }else{
+                } else {
                     tutorialCategoryUpdateAvailableLiveData.postValue(false)
                 }
-            }catch ( e: Exception){
+            } catch (e: Exception) {
                 tutorialCategoryUpdateAvailableLiveData.postValue(false)
-            }finally {
+            } finally {
                 isFetchingTutorialCategory = false
             }
         }
     }
-
-
 }

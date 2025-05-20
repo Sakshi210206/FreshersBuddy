@@ -4,10 +4,7 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
         android:title="@string/bottom_navigation_home" />
-    <item
-        android:id="@+id/more"
-        android:icon="@drawable/ic_more"
-        android:title="@string/bottom_navigation_more" />
+
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_round_account_button_with_user_inside"

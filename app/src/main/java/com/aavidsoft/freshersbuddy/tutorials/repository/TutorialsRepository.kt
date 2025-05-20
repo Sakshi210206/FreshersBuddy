@@ -7,7 +7,7 @@ import com.aavidsoft.freshersbuddy.utils.repository.Repository
 class TutorialsRepository(
     private val tutorialsApiService: TutorialsApiService
 ):Repository() {
-    suspend fun fetchTutorialsList(): ArrayList<ItemsTutorial>?{
-        return tutorialsApiService.fetchTutorials().data
+    suspend fun fetchTutorialsList(id: Int): ArrayList<ItemsTutorial>?{
+        return tutorialsApiService.fetchTutorials(id).data
     }
 }
