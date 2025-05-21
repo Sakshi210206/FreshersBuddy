@@ -79,15 +79,4 @@ class InterviewQuestionDetailsFragment : Fragment() {
             }
         }
     }
-
-//    private fun initObserver(){
-//        interviewQuestionDetailsViewModel.interviewQuestionDetailStatusMutableLiveData.observe(
-//            viewLifecycleOwner
-//        ){
-//            interviewQuestionDetailsFragmentBinding.interviewQuestionDetailItems = it
-//            interviewQuestionItemDetails = it
-//        }
-//    }
-
-
 }
