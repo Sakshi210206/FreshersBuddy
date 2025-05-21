@@ -1,5 +1,6 @@
 package com.aavidsoft.freshersbuddy.articles.allarticles.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Html.escapeHtml
 import android.view.LayoutInflater
@@ -38,7 +39,6 @@ class ArticleDetailsFragment : Fragment() {
 
         return articleDetailsFragmentBinding.root
     }
-
     private fun initViewModel() {
         articleDetailsViewModel = ViewModelProvider(
             this, ViewModelFactory(
@@ -90,12 +90,4 @@ class ArticleDetailsFragment : Fragment() {
             webView.loadDataWithBaseURL(null, htmlContent, "text/html", "UTF-8", null)
         }
     }
-//    private fun initObserver() {
-//        articleDetailsViewModel.articleDetailStatusMutableLiveData.observe(
-//            viewLifecycleOwner
-//        ) {
-//           articleDetailsFragmentBinding.item = it
-//            itemsDetail = it
-//        }
-//    }
 }

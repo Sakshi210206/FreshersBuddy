@@ -1,5 +1,6 @@
 package com.aavidsoft.freshersbuddy.tutorials.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -44,12 +45,64 @@ class TutorialsDetailsFragment : Fragment() {
             )
         )[TutorialsDetailsViewModel::class.java]
     }
-    private fun initObserver(){
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initObserver() {
         tutorialsDetailsViewModel.tutorialDetailStatusMutableLiveData.observe(
             viewLifecycleOwner
-        ){
+        ) {
             tutorialsDetailsFragment.tutorialDetailsItem = it
             tutorialDetails = it
+
+            val htmlContent = """
+            <html>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <style>
+                        body {
+                            font-family: sans-serif;
+                            padding: 16px;
+                            color: #000;
+                            line-height: 1.6;
+                        }
+                        h1 {
+                            font-size: 6vw;
+                            font-weight: bold;
+                            margin-bottom: 16px;
+                        }
+                        p {
+                            font-size: 4.2vw;
+                            margin: 8px 0;
+                        }
+                        .meta {
+                            font-size: 3.5vw;
+                            color: #666;
+                            margin-top: 12px;
+                        }
+                        img {
+                            width: 100%;
+                            height: auto;
+                            margin-bottom: 20px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <img src="${it.imageUrls?.getOrNull(0) ?: ""}" alt="Article Image"/>
+                    <h1>${it.title}</h1>
+                    ${it.body}
+                    <p class="meta">Author: ${it.author}</p>
+                    <p class="meta">Published on: ${it.publishedOn}</p>
+                </body>
+            </html>
+        """.trimIndent()
+
+            tutorialsDetailsFragment.webView.settings.javaScriptEnabled = true
+            tutorialsDetailsFragment.webView.loadDataWithBaseURL(
+                null,
+                 htmlContent,
+                "text/html",
+                "utf-8",
+                null
+            )
         }
     }
 }

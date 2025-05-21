@@ -7,12 +7,18 @@
             name="tutorialDetailsItem"
             type="com.aavidsoft.freshersbuddy.tutorials.models.TutorialsDetail"  />
     </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            android:layout_margin="8dp"/>
 
-        <ImageView
+      <!--  <ImageView
             android:id="@+id/tutorialImage"
             android:layout_width="400dp"
             android:layout_height="190dp"
@@ -76,8 +82,6 @@
             android:textColor="@color/black"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tutorialDescription" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/tutorialDescription" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
